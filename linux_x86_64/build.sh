@@ -2,7 +2,7 @@ CC=
 LD=
 AR=
 TARGET="x86-64"
-TARGET="android"
+# TARGET="android"
 
 if [[ "$TARGET" == "x86-64" ]]; then
   CC=$(which gcc)
@@ -20,7 +20,7 @@ fi
 
 bash ./clear.sh
 
-ALL_C_FILE=$(ls *.c *.S)
+ALL_C_FILE=$(ls calc*.c *.S)
 ## compile all c files
 echo "compile all c files"
 for file in ${ALL_C_FILE}; do
@@ -46,16 +46,19 @@ echo "building shared calc_test lib file ........."
 shared_calc_test_file=libcalc_test_shared_lib.so
 $CC -v -shared -o ${shared_calc_test_file} ${all_calc_func_obj} ${ALL_CALC_TEST_OBJ_FILE}
 
-ALL_MAIN_OBJ_FILE=$(ls main*.o)
 ## create execute file
 exe_static_file=main_app_static.bin
 exe_shared_file=main_app_shared.bin
 
 echo "building execute file for ${exe_static_file}........."
-$CC -v ${ALL_MAIN_OBJ_FILE} -L ./ -l calc_test_static_lib -o ${exe_static_file}
+$CC -v  main.c -L ./ -l calc_test_static_lib \
+-D TAG_TYPE='"main_app_static"' \
+-o ${exe_static_file}
 
 echo "building execute file for ${exe_shared_file}........."
-$CC -v ${ALL_MAIN_OBJ_FILE} -L ./ -l calc_test_shared_lib -o ${exe_shared_file}
+$CC -v main.c -L ./ -l calc_test_shared_lib \
+-D TAG_TYPE='"main_app_shared"' \
+-o ${exe_shared_file}
 
 if [[ "$TARGET" == "x86-64" ]]; then
 

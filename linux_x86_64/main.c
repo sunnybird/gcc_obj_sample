@@ -2,7 +2,7 @@
 #include "stdio.h"
 
 int main(int argc, char const *argv[]) {
-
+  printf("========RUN TYPE : %s ========== \n", TAG_TYPE);
   printf("%s start \n", __FUNCTION__);
   test_add();
   test_sub();

@@ -1,1 +1,0 @@
-int calc_func_add(int a, int b) { return a + b; }

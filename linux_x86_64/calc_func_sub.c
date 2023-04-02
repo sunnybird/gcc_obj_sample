@@ -1,0 +1,1 @@
+int calc_func_sub(int a, int b) { return a - b; }

@@ -9,6 +9,7 @@ int main(int argc, char const *argv[]) {
   test_mul();
   test_div();
 
+  out_data_param();
   printf("%s end \n", __FUNCTION__);
   return 0;
 }

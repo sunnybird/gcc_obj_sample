@@ -9,4 +9,5 @@ void test_sub();
 void test_mul();
 void test_div();
 
+void out_data_param();
 #endif

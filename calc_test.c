@@ -1,5 +1,16 @@
 #include "calc_test.h"
 #include "calc.h"
+#include "data.h"
+
+void out_data_param() {
+  printf("data_start : %lu \n", data_start);
+  printf("data_end : %lu \n", data_end);
+  printf("data_size : %lu \n", &data_size);
+
+  printf("calc data size: \n");
+  printf("data size: : %lu \n", data_end - data_start);
+}
+
 void test_add() {
   printf("[%s]", __FUNCTION__);
   int a = 100, b = 10;

@@ -52,7 +52,7 @@ include $(CLEAR_VARS)
 LOCAL_MODULE := calc_app_shared
 LOCAL_C_INCLUDES := $(LOCAL_PATH)/inc
 LOCAL_SRC_FILES :=  src/main.c
-LOCAL_STATIC_LIBRARIES := calc_test_shared
+LOCAL_SHARED_LIBRARIES := calc_test_shared
 LOCAL_LDLIBS   = -lz -lm
 LOCAL_CFLAGS   = -Wall -pedantic -std=c11 -g
 LOCAL_CFLAGS += -DTAG_TYPE='"calc_app_shared"'

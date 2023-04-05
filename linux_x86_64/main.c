@@ -1,8 +1,16 @@
 #include "calc_test.h"
 #include "stdio.h"
+#define STR1(R)  #R
+#define STR2(R)  STR1(R)
 
 int main(int argc, char const *argv[]) {
-  printf("========RUN TYPE : %s ========== \n", TAG_TYPE);
+
+#ifdef TAG_TYPE
+  printf("========RUN TYPE : %s ========== \n", STR2(TAG_TYPE));
+#else
+  printf("========RUN TYPE : %s ========== \n", "default");
+#endif
+
   printf("%s start \n", __FUNCTION__);
   test_add();
   test_sub();

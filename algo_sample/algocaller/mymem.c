@@ -2,9 +2,9 @@
 #include <stdlib.h>
 
 void* ext_malloc( int size ) {
-
-    printf( "[%s] and size: %d \n", __FUNCTION__, size );
-    return malloc( size );
+    void* ptr = malloc( size );
+    printf( "[%s] and size: %d and ptr: %p\n", __FUNCTION__, size, ptr );
+    return ptr;
 }
 void ext_free( void* ptr ) {
     printf( "[%s] and ptr: %p \n", __FUNCTION__, ptr );

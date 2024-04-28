@@ -1,0 +1,7 @@
+{
+    "files.associations": {
+        "new": "cpp",
+        "runtime.h": "c",
+        "algo.h": "c"
+    }
+}
